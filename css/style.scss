@@ -78,7 +78,7 @@ nav{
 }
 
 .toggleShow{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
 }
 
@@ -328,3 +328,128 @@ footer:nth-of-type(2){
             color: partial.$bg-color;
         }
 }
+
+
+/***********--Mobil--***********/
+
+@media screen and (max-width: 900px) {
+    header:nth-of-type(1){
+        display: inline; //gør at elementet kun fylder den plads, som den behøver og vil derfor stå ved siden af andre elementer
+    }
+
+    .mobile-nav{
+        color: partial.$primary-color;
+
+            .bars{
+                display: flex;
+            }
+     }
+
+     .desktop-nav{
+        display: none;
+        height: auto;
+        border-top: 4px solid partial.$primary-color;
+
+        ul{
+            flex-direction: coloumn;
+        }
+
+        li{
+            display: flex;
+        }
+     }
+
+     .header-img{
+        .banner-tekst{
+            left: 5%;
+            top: 15%;
+            position: absolute;
+        }
+
+        h1{
+            font-size: 5vw;
+        }
+
+        p{
+            font-size: 4vw;
+        }
+
+        .bg-billede-desktop{
+            display: none;
+        }
+
+        .bg-billede-mobil{
+            display: initial;
+        }
+     }
+
+     //Main
+
+     .cta-wrapper{
+        flex-direction: column;
+     }
+
+     .cta-1, .cta-2, .cta-3{
+        @include partial.cta-box($width: 80%);
+        img{
+            width: 50%;
+        }
+     }
+
+     //Tekst og billede sektion
+
+     .tekst{
+        grid-column: 1/8;
+        order: 2;
+        padding: 2em 2em 4em 2em;
+     }
+
+     .secondary-btn{
+        display: block;
+     }
+
+     .billede{
+        order: 1;
+        grid-column: 1/8;
+        height: 300px;
+     }
+
+
+     //Kontaktformular
+
+     .kontaktform{
+        width: 80%;
+
+            h3, p{
+                margin: 0 0 0.5em 0;
+            }
+     }
+
+     .section-form{
+        display: flex;
+        flex-direction: column;
+     }
+
+     input[type=text], input[type=email], input[type=tel], select, textarea{
+        margin: 0.5em 0 1em 0;
+     }
+
+     input[type=submit]{
+        margin: 0;
+     }
+
+     .footer-left{
+        grid-column: 1/3;
+        margin: 0 auto;
+     }
+
+     .footer-right{
+        grid-column: 1/3;
+        text-align: center;
+        margin: 2em auto 0 auto;
+     }
+}
+    
+
+
+    
