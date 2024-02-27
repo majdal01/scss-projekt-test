@@ -2,13 +2,10 @@
 
 /*generel styling*/
 
-*{
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
     font-family: partial.$font;
     background-color: partial.$bg-color;
 
